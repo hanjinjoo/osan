@@ -131,6 +131,9 @@ section { padding: 112px 0; }
 .sec-head p { margin-top: 10px; color: var(--muted); }
 
 /* ---------- Downloads ---------- */
+[hidden] { display: none !important; }
+.kakao-note { margin-bottom: 28px; padding: 18px 22px; background: var(--tint); border-left: 4px solid var(--navy); font-size: 15px; line-height: 1.7; }
+.kakao-note b { font-weight: 700; }
 .dl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .dl-card { display: flex; flex-direction: column; padding: 40px; border: 1px solid var(--line); background: var(--bg); transition: border-color .2s ease, background .2s ease; }
 .dl-card:hover { border-color: var(--navy); background: var(--tint); }
@@ -369,6 +372,7 @@ footer p { margin-top: 6px; }
         <h2>자료 다운로드</h2>
         <p>정산 서식과 간담회 자료를 내려받으세요.</p>
       </div>
+      <p class="kakao-note" id="kakaoNote" role="status" hidden><b>카카오톡 안에서 열린 화면입니다.</b> 이 화면에서는 파일이 제대로 받아지지 않아요. 아래 버튼을 누르면 Chrome·Safari 같은 기본 브라우저로 열려 바로 내려받습니다. 열리지 않으면 화면의 메뉴에서 &lsquo;다른 브라우저로 열기&rsquo;를 선택해 주세요.</p>
       <div class="dl-grid">
         <article class="dl-card">
           <p class="dl-type" aria-hidden="true">HWPX</p>
@@ -591,6 +595,17 @@ footer p { margin-top: 6px; }
   document.querySelectorAll('#gnb a').forEach(function (a) {
     a.addEventListener('click', function () { setMenu(false); });
   });
+  var note = document.getElementById('kakaoNote');
+  if (/KAKAOTALK/i.test(navigator.userAgent)) {
+    note.hidden = false;
+    document.querySelectorAll('a.dl-btn').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        var abs = new URL(a.getAttribute('href'), location.href).href;
+        location.href = 'kakaotalk://web/openExternal?url=' + encodeURIComponent(abs);
+      });
+    });
+  }
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
 })();
 </script>
