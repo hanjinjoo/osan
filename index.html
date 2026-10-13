@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>전공·취업동아리 자료실 | 오산대학교</title>
+<meta name="description" content="오산대학교 전공·취업동아리 정산 양식과 간담회 자료, 제출 기한 및 방법 안내">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  --navy: #003876;
+  --navy-deep: #00234d;
+  --bg: #ffffff;
+  --tint: #f2f5fa;
+  --text: #17202e;
+  --muted: #56627a;
+  --line: #d8dfea;
+  --accent: #003876;
+  --head-bg: rgba(255,255,255,.96);
+  --head-text: #17202e;
+  --danger: #b3261e;
+  --danger-bg: #fdf1f0;
+  --on-navy: #ffffff;
+  --on-navy-muted: rgba(255,255,255,.72);
+  --shell: #00234d;
+  --serif: "Playfair Display", "Noto Serif KR", Georgia, serif;
+  --sans: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0b1422;
+    --tint: #101c30;
+    --text: #e7edf6;
+    --muted: #9aa8bf;
+    --line: #23324b;
+    --accent: #8db8ee;
+    --head-bg: rgba(11,20,34,.96);
+    --head-text: #e7edf6;
+    --danger: #ff8a80;
+    --danger-bg: #2a1716;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0b1422;
+  --tint: #101c30;
+  --text: #e7edf6;
+  --muted: #9aa8bf;
+  --line: #23324b;
+  --accent: #8db8ee;
+  --head-bg: rgba(11,20,34,.96);
+  --head-text: #e7edf6;
+  --danger: #ff8a80;
+  --danger-bg: #2a1716;
+}
+
+*, *::before, *::after { box-sizing: inherit; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 80px); background: var(--shell); }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.75;
+  word-break: keep-all;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+h1, h2, h3, p, ul, ol { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+:focus-visible { outline: 3px solid #6fa8ee; outline-offset: 3px; }
+.wrap { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 max(28px, env(safe-area-inset-left, 0px)) 0 max(28px, env(safe-area-inset-right, 0px)); }
+
+/* ---------- Header ---------- */
+.site-head {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+  padding-top: env(safe-area-inset-top, 0px);
+  color: var(--on-navy);
+  transition: background .25s ease, color .25s ease, box-shadow .25s ease;
+}
+.site-head .wrap { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+.site-head.solid { background: var(--head-bg); color: var(--head-text); box-shadow: 0 1px 0 var(--line); backdrop-filter: blur(8px); }
+.logo { display: flex; flex-direction: column; line-height: 1.1; }
+.logo b { font-size: 21px; font-weight: 700; letter-spacing: -.01em; }
+.logo span { font-family: var(--serif); font-size: 11px; letter-spacing: .14em; opacity: .8; margin-top: 3px; }
+.gnb { display: flex; gap: 40px; }
+.gnb a { font-size: 16px; font-weight: 500; padding: 8px 0; border-bottom: 2px solid transparent; }
+.gnb a:hover { border-bottom-color: currentColor; }
+
+.menu-btn { display: none; align-items: center; justify-content: center; width: 48px; height: 48px; margin-right: -12px; background: none; border: 0; color: inherit; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.menu-btn span, .menu-btn span::before, .menu-btn span::after { display: block; width: 22px; height: 2px; background: currentColor; transition: transform .25s ease, background .2s ease; }
+.menu-btn span { position: relative; }
+.menu-btn span::before, .menu-btn span::after { content: ""; position: absolute; left: 0; }
+.menu-btn span::before { top: -7px; }
+.menu-btn span::after { top: 7px; }
+.site-head.open .menu-btn span { background: transparent; }
+.site-head.open .menu-btn span::before { top: 0; transform: rotate(45deg); }
+.site-head.open .menu-btn span::after { top: 0; transform: rotate(-45deg); }
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative; overflow: hidden;
+  background: var(--navy);
+  color: var(--on-navy);
+  min-height: min(780px, 100svh);
+  display: flex; align-items: flex-end;
+  padding: 150px 0 72px;
+}
+.hero-art { position: absolute; right: -120px; top: 50%; width: 760px; max-width: 90vw; transform: translateY(-50%); opacity: .5; pointer-events: none; }
+.hero .wrap { position: relative; }
+.hero-term { font-size: 16px; font-weight: 500; color: var(--on-navy-muted); margin-bottom: 20px; }
+.hero-en { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: clamp(56px, 10vw, 148px); line-height: .98; letter-spacing: -.02em; }
+.hero h1 { margin-top: 28px; font-size: clamp(28px, 4.2vw, 48px); font-weight: 700; letter-spacing: -.02em; line-height: 1.3; }
+.hero-lead { margin-top: 16px; font-size: clamp(16px, 1.8vw, 19px); color: var(--on-navy-muted); max-width: 30em; }
+.hero-cta { display: inline-flex; align-items: center; gap: 12px; margin-top: 40px; padding-bottom: 8px; border-bottom: 2px solid #fff; font-weight: 500; }
+.hero-cta:hover { gap: 18px; }
+.hero-cta { transition: gap .2s ease; }
+.hero-in { animation: rise .9s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+
+/* ---------- Section frame ---------- */
+section { padding: 112px 0; }
+.sec-head { margin-bottom: 56px; }
+.sec-en { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: clamp(40px, 6vw, 72px); line-height: 1; color: var(--accent); letter-spacing: -.01em; }
+.sec-head h2 { margin-top: 14px; font-size: clamp(24px, 3vw, 34px); font-weight: 700; letter-spacing: -.02em; line-height: 1.35; }
+.sec-head p { margin-top: 10px; color: var(--muted); }
+
+/* ---------- Downloads ---------- */
+.dl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.dl-card { display: flex; flex-direction: column; padding: 40px; border: 1px solid var(--line); background: var(--bg); transition: border-color .2s ease, background .2s ease; }
+.dl-card:hover { border-color: var(--navy); background: var(--tint); }
+.dl-type { font-family: var(--serif); font-size: 44px; font-weight: 500; line-height: 1; color: var(--accent); }
+.dl-kind { margin-top: 20px; font-size: 15px; color: var(--muted); font-weight: 500; }
+.dl-card h3 { margin-top: 6px; font-size: 26px; font-weight: 700; letter-spacing: -.02em; line-height: 1.35; }
+.dl-card p { margin-top: 14px; color: var(--muted); }
+.dl-meta { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
+.dl-btn { margin-top: 20px; display: flex; align-items: center; justify-content: space-between; padding: 18px 24px; background: var(--navy); color: #fff; font-weight: 500; transition: background .2s ease; }
+.dl-btn:hover { background: var(--navy-deep); }
+.dl-btn + .dl-btn { margin-top: 12px; }
+
+/* ---------- Deadlines ---------- */
+.numbers { background: var(--navy); color: var(--on-navy); padding: 88px 0; }
+.num-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+.num { padding: 8px 40px; border-left: 1px solid rgba(255,255,255,.22); }
+.num:first-child { padding-left: 0; border-left: 0; }
+.num-label { font-size: 15px; color: var(--on-navy-muted); font-weight: 500; }
+.num-value { margin-top: 10px; font-size: clamp(28px, 3.4vw, 42px); font-weight: 700; letter-spacing: -.02em; line-height: 1.25; }
+.num-desc { margin-top: 12px; font-size: 15px; color: var(--on-navy-muted); }
+
+/* ---------- Steps ---------- */
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; counter-reset: s; position: relative; }
+.steps::before { content: ""; position: absolute; left: 0; right: 0; top: 11px; height: 1px; background: var(--line); }
+.step { position: relative; padding-top: 48px; }
+.step::before { content: ""; position: absolute; top: 0; left: 0; width: 23px; height: 23px; border-radius: 50%; background: var(--bg); border: 2px solid var(--navy); }
+.step::after { content: ""; position: absolute; top: 7px; left: 7px; width: 9px; height: 9px; border-radius: 50%; background: var(--navy); }
+.step-no { font-family: var(--serif); font-style: italic; font-size: 20px; color: var(--accent); }
+.step h3 { margin-top: 6px; font-size: 21px; font-weight: 700; letter-spacing: -.02em; }
+.step p { margin-top: 12px; color: var(--muted); font-size: 15.5px; }
+.note { margin-top: 56px; padding: 24px 32px; background: var(--tint); border-left: 4px solid var(--navy); color: var(--text); }
+
+#documents { padding-top: 0; }
+/* ---------- Table ---------- */
+.tbl-wrap { overflow-x: auto; border-top: 2px solid var(--navy); }
+table { width: 100%; border-collapse: collapse; min-width: 560px; }
+th, td { text-align: left; padding: 22px 24px; border-bottom: 1px solid var(--line); font-size: 17px; }
+th { font-weight: 700; color: var(--muted); font-size: 15px; background: var(--tint); }
+td:first-child { font-weight: 700; width: 32%; }
+.tbl-note { margin-top: 20px; font-size: 15px; color: var(--muted); }
+
+/* ---------- Rules ---------- */
+.rules { background: var(--tint); }
+.limits { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; background: var(--bg); border-top: 2px solid var(--navy); }
+.limit { padding: 36px 32px; border-left: 1px solid var(--line); }
+.limit:first-child { border-left: 0; }
+.limit-label { font-size: 15px; color: var(--muted); font-weight: 500; }
+.limit-value { margin-top: 10px; font-size: clamp(30px, 3.4vw, 42px); font-weight: 700; color: var(--accent); letter-spacing: -.02em; line-height: 1.2; }
+.limit-desc { margin-top: 10px; font-size: 15px; color: var(--muted); }
+.ban { margin-top: 24px; display: flex; gap: 24px; align-items: baseline; padding: 24px 28px; background: var(--danger-bg); border-left: 4px solid var(--danger); }
+.ban-label { flex: none; font-size: 15px; font-weight: 700; color: var(--danger); }
+.ban-text { font-size: clamp(17px, 2.2vw, 20px); font-weight: 700; letter-spacing: -.02em; line-height: 1.5; }
+.nogo-head { margin-top: 72px; font-size: clamp(21px, 2.6vw, 28px); font-weight: 700; letter-spacing: -.02em; line-height: 1.4; }
+.nogo-sub { margin-top: 6px; color: var(--muted); font-size: 15.5px; }
+.nogo { margin-top: 16px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.nogo-item { display: flex; flex-direction: column; gap: 14px; padding: 28px 24px 30px; background: var(--bg); }
+.nogo-icon { display: inline-flex; flex: none; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--danger-bg); color: var(--danger); font-size: 19px; font-weight: 700; line-height: 1; }
+.nogo-title { font-size: 17px; font-weight: 700; letter-spacing: -.02em; line-height: 1.45; }
+.nogo-note { margin-top: 4px; font-size: 14.5px; font-weight: 500; color: var(--danger); line-height: 1.5; }
+.nogo-drink { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1.25fr; gap: 48px; align-items: center; padding: 36px 32px; background: var(--bg); }
+.nogo-drink .nogo-icon { margin-bottom: 14px; }
+.nogo-drink .nogo-title { font-size: 20px; }
+.nogo-rule { margin-top: 10px; font-size: 15.5px; line-height: 1.7; }
+.nogo-rule b { font-weight: 700; }
+.ex { display: grid; gap: 12px; }
+.ex-cap { font-size: 14px; font-weight: 700; color: var(--muted); }
+.ex-row, .ex-scale { display: grid; grid-template-columns: 168px 1fr 56px; gap: 12px; align-items: center; font-size: 14.5px; }
+.ex-track { position: relative; height: 14px; background: var(--tint); }
+.ex-fill { height: 100%; }
+.ex-ok .ex-fill { width: 53.3%; background: var(--navy); }
+.ex-bad .ex-fill { width: 80%; background: var(--danger); }
+.ex-track::after { content: ""; position: absolute; top: -6px; bottom: -6px; left: 66.7%; border-left: 2px dashed var(--muted); }
+.ex-res { font-weight: 700; text-align: right; }
+.ex-ok .ex-res { color: var(--accent); }
+.ex-bad .ex-res { color: var(--danger); }
+.ex-scale { margin-top: -4px; }
+.ex-scale span { position: relative; height: 18px; }
+.ex-scale i { position: absolute; left: 66.7%; transform: translateX(-50%); font-style: normal; font-size: 13px; color: var(--muted); }
+.acc { margin-top: 56px; border-top: 2px solid var(--navy); background: var(--bg); }
+.acc details { border-bottom: 1px solid var(--line); }
+.acc summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 72px; padding: 22px 28px; font-size: 20px; font-weight: 700; letter-spacing: -.02em; line-height: 1.4; -webkit-tap-highlight-color: transparent; transition: color .2s ease; }
+.acc summary::-webkit-details-marker { display: none; }
+.acc summary:hover { color: var(--accent); }
+.acc summary::after { content: ""; flex: none; width: 11px; height: 11px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg) translate(-2px, -2px); transition: transform .25s ease; }
+.acc details[open] > summary { color: var(--accent); }
+.acc details[open] > summary::after { transform: rotate(-135deg) translate(-2px, -2px); }
+.acc ul { padding: 0 28px 20px; }
+.acc li { position: relative; padding: 16px 0 16px 18px; border-top: 1px solid var(--line); font-size: 16px; line-height: 1.7; }
+.acc li::before { content: ""; position: absolute; left: 0; top: 27px; width: 6px; height: 6px; background: var(--navy); }
+.acc li strong { font-weight: 700; }
+
+/* ---------- Contact ---------- */
+.contact { background: var(--navy-deep); color: var(--on-navy); padding: 96px 0; }
+.contact-in { display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+.contact .sec-en { color: #8db8ee; }
+.contact h3 { margin-top: 14px; font-size: clamp(24px, 3vw, 34px); font-weight: 700; letter-spacing: -.02em; line-height: 1.35; }
+.contact p { margin-top: 10px; color: var(--on-navy-muted); }
+.tel { display: inline-flex; align-items: center; gap: 14px; padding: 20px 36px; border: 2px solid #fff; font-size: 24px; font-weight: 700; letter-spacing: .02em; transition: background .2s ease, color .2s ease; }
+.tel:hover { background: #fff; color: var(--navy-deep); }
+
+/* ---------- Footer ---------- */
+footer { background: var(--shell); color: var(--on-navy-muted); padding: 48px 0 56px; font-size: 14px; }
+footer .wrap { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+footer b { color: #fff; font-size: 16px; }
+footer p { margin-top: 6px; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  section { padding: 80px 0; }
+  .nogo { grid-template-columns: 1fr 1fr; }
+  .nogo-drink { grid-template-columns: 1fr; gap: 28px; }
+  .dl-grid { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr 1fr; row-gap: 48px; }
+  .steps::before { display: none; }
+}
+@media (max-width: 720px) {
+  .wrap { padding: 0 max(20px, env(safe-area-inset-left, 0px)) 0 max(20px, env(safe-area-inset-right, 0px)); }
+  html { scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 68px); }
+  body { font-size: 15.5px; }
+  section { padding: 64px 0; }
+  .site-head .wrap { height: 60px; }
+  .logo b { font-size: 18px; }
+  .menu-btn { display: flex; }
+  .gnb { position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0; background: var(--head-bg); color: var(--head-text); border-top: 1px solid var(--line); box-shadow: 0 12px 24px rgba(0,0,0,.12); padding: 4px max(20px, env(safe-area-inset-left, 0px)) 12px; visibility: hidden; opacity: 0; transform: translateY(-8px); transition: opacity .2s ease, transform .2s ease, visibility .2s; }
+  .site-head.open { background: var(--head-bg); color: var(--head-text); }
+  .site-head.open .gnb { visibility: visible; opacity: 1; transform: none; }
+  .gnb a { display: block; padding: 16px 0; font-size: 17px; border-bottom: 1px solid var(--line); }
+  .gnb a:last-child { border-bottom: 0; }
+  .hero { min-height: 0; padding: 112px 0 48px; }
+  .hero-art { right: -280px; width: 620px; opacity: .3; }
+  .hero-term { margin-bottom: 14px; font-size: 14px; }
+  .hero-en { font-size: clamp(48px, 15vw, 72px); }
+  .hero h1 { margin-top: 20px; font-size: 26px; }
+  .hero-lead { font-size: 15.5px; }
+  .hero-cta { margin-top: 28px; }
+  .sec-head { margin-bottom: 32px; }
+  .sec-en { font-size: 40px; }
+  .sec-head h2 { font-size: 23px; }
+  .dl-card { padding: 24px 22px; }
+  .dl-type { font-size: 36px; }
+  .dl-card h3 { font-size: 22px; }
+  .dl-btn { padding: 18px 20px; min-height: 56px; }
+  .numbers { padding: 56px 0; }
+  .num-grid { grid-template-columns: 1fr; gap: 0; }
+  .num { padding: 24px 0; border-left: 0; border-bottom: 1px solid rgba(255,255,255,.22); }
+  .num:first-child { padding-top: 0; }
+  .num:last-child { border-bottom: 0; padding-bottom: 0; }
+  .steps { grid-template-columns: 1fr; gap: 0; }
+  .steps::before { display: block; left: 11px; right: auto; top: 12px; bottom: 12px; width: 1px; height: auto; }
+  .step { padding: 0 0 32px 48px; }
+  .step:last-child { padding-bottom: 0; }
+  .step h3 { font-size: 19px; }
+  .note { margin-top: 36px; padding: 18px 20px; }
+  #documents { padding-top: 0; }
+  table { min-width: 0; }
+  th, td { padding: 14px 12px; font-size: 15px; }
+  td:first-child { width: 38%; }
+  .limits { grid-template-columns: 1fr; }
+  .limit { padding: 24px 20px; border-left: 0; border-top: 1px solid var(--line); }
+  .limit:first-child { border-top: 0; }
+  .nogo-head { margin-top: 48px; }
+  .nogo { grid-template-columns: 1fr; }
+  .nogo-item { flex-direction: row; align-items: flex-start; gap: 14px; padding: 18px 16px; }
+  .nogo-icon { width: 28px; height: 28px; font-size: 18px; }
+  .nogo-title { font-size: 16px; }
+  .nogo-note { margin-top: 2px; font-size: 14px; }
+  .nogo-drink { grid-template-columns: 1fr; gap: 24px; padding: 22px 16px; }
+  .nogo-drink .nogo-title { font-size: 18px; }
+  .ex-row { grid-template-columns: 1fr 52px; row-gap: 6px; font-size: 14px; }
+  .ex-row > span:first-child { grid-column: 1 / -1; }
+  .ex-row .ex-track { grid-column: 1; }
+  .ex-scale { grid-template-columns: 1fr 52px; gap: 0; }
+  .ex-scale span:first-child { display: none; }
+  .ban { flex-direction: column; gap: 6px; margin-top: 32px; padding: 20px; }
+  .acc { margin-top: 40px; }
+  .acc summary { min-height: 64px; padding: 18px 16px; font-size: 17px; }
+  .acc ul { padding: 0 16px 12px; }
+  .acc li { padding: 14px 0 14px 16px; font-size: 15px; }
+  .acc li::before { top: 24px; }
+  .contact { padding: 64px 0; }
+  .contact-in { gap: 28px; }
+  .tel { width: 100%; justify-content: center; padding: 18px 24px; font-size: 22px; }
+  footer { padding: 36px 0 44px; }
+  footer .wrap { flex-direction: column; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero-in { animation: none; }
+  * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-head" id="head">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="오산대학교 처음으로">
+      <b>오산대학교</b>
+      <span>OSAN UNIVERSITY</span>
+    </a>
+    <nav class="gnb" id="gnb" aria-label="주요 메뉴">
+      <a href="#downloads">자료 다운로드</a>
+      <a href="#submit">제출 안내</a>
+      <a href="#rules">사용 기준</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="gnb"><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <svg class="hero-art" viewBox="0 0 760 760" fill="none" aria-hidden="true">
+      <g stroke="#ffffff" stroke-opacity=".28" stroke-width="1.2">
+        <circle cx="380" cy="380" r="120"/>
+        <circle cx="380" cy="380" r="200"/>
+        <circle cx="380" cy="380" r="280"/>
+        <circle cx="380" cy="380" r="360"/>
+      </g>
+      <path d="M380 20 A360 360 0 0 1 740 380" stroke="#ffffff" stroke-opacity=".8" stroke-width="2"/>
+    </svg>
+    <div class="wrap">
+      <div class="hero-in">
+        <p class="hero-term">2026학년도 2학기</p>
+        <p class="hero-en" aria-hidden="true">Club<br>Resources</p>
+        <h1>전공·취업동아리 자료실</h1>
+        <p class="hero-lead">정산에 필요한 서류와 간담회 안내자료를 한곳에서 확인하세요.</p>
+        <a class="hero-cta" href="#downloads">자료 다운로드 <span aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+  </div>
+
+  <section id="downloads">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-en" aria-hidden="true">Download</p>
+        <h2>자료 다운로드</h2>
+        <p>정산 서식과 간담회 자료를 내려받으세요.</p>
+      </div>
+      <div class="dl-grid">
+        <article class="dl-card">
+          <p class="dl-type" aria-hidden="true">HWPX</p>
+          <p class="dl-kind">정산 서식</p>
+          <h3>영수증 붙임철 · 검수조서</h3>
+          <p>지원금 사용 후 작성하는 정산 양식입니다.<br>물품을 구매한 경우 검수조서도 작성해 주세요.<br>소속 동아리 유형에 맞는 양식을 받아 주세요.</p>
+          <p class="dl-meta">한글 문서 (HWPX) · 전공 / 취업 두 가지 버전</p>
+          <a class="dl-btn" href="files/%EC%98%81%EC%88%98%EC%A6%9D%20%EB%B6%99%EC%9E%84%EC%B2%A0%26%EA%B2%80%EC%88%98%EC%A1%B0%EC%84%9C%28%EC%A0%84%EA%B3%B5%29.hwpx" download="영수증 붙임철&amp;검수조서(전공).hwpx"><span>전공동아리 정산양식 다운로드</span><span aria-hidden="true">↓</span></a>
+          <a class="dl-btn" href="files/%EC%98%81%EC%88%98%EC%A6%9D%20%EB%B6%99%EC%9E%84%EC%B2%A0%26%EA%B2%80%EC%88%98%EC%A1%B0%EC%84%9C%28%EC%B7%A8%EC%97%85%29.hwpx" download="영수증 붙임철&amp;검수조서(취업).hwpx"><span>취업동아리 정산양식 다운로드</span><span aria-hidden="true">↓</span></a>
+        </article>
+        <article class="dl-card">
+          <p class="dl-type" aria-hidden="true">PPTX</p>
+          <p class="dl-kind">간담회 자료</p>
+          <h3>동아리 운영 · 정산 안내</h3>
+          <p>활동보고서 작성부터 지원금 사용 기준까지,<br>2026학년도 2학기 간담회 자료를 확인하세요.</p>
+          <p class="dl-meta">PowerPoint (PPTX)</p>
+          <a class="dl-btn" href="files/2026%ED%95%99%EB%85%84%EB%8F%84%202%ED%95%99%EA%B8%B0%20%EA%B0%84%EB%8B%B4%ED%9A%8C%20%EC%9E%90%EB%A3%8C.pptx" download="2026학년도 2학기 간담회 자료.pptx"><span>간담회 자료 다운로드</span><span aria-hidden="true">↓</span></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="numbers">
+    <div class="wrap">
+      <div class="num-grid">
+        <div class="num">
+          <p class="num-label">카드 사용 마감</p>
+          <p class="num-value">매월 29일까지</p>
+          <p class="num-desc">승인받은 용도와 금액 내에서 사용</p>
+        </div>
+        <div class="num">
+          <p class="num-label">정산 서류 제출</p>
+          <p class="num-value">다음 달 5일까지</p>
+          <p class="num-desc">활동보고서와 지출 증빙서류 준비</p>
+        </div>
+        <div class="num">
+          <p class="num-label">제출 방법</p>
+          <p class="num-value">학생취업처 서면 제출</p>
+          <p class="num-desc">단면 출력 · 참여 학생 및 지도교수 서명</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="submit">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-en" aria-hidden="true">Process</p>
+        <h2>이 순서대로 제출해 주세요</h2>
+        <p>활동 당일 작성 → 승인 → 출력·서명 → 제출</p>
+      </div>
+      <ol class="steps">
+        <li class="step">
+          <p class="step-no">Step 01</p>
+          <h3>활동보고서 작성</h3>
+          <p>활동 당일 학생이력관리시스템에서 300자 이상 작성하고 활동사진을 첨부합니다.</p>
+        </li>
+        <li class="step">
+          <p class="step-no">Step 02</p>
+          <h3>승인 후 단면 출력</h3>
+          <p>담당자 승인 후 보고서를 단면으로 출력합니다. 수정 사항은 동아리 회장이 반영합니다.</p>
+        </li>
+        <li class="step">
+          <p class="step-no">Step 03</p>
+          <h3>서명 · 증빙 준비</h3>
+          <p>참여 학생과 지도교수의 서명을 받고 사용 항목별 정산 서류를 준비합니다.</p>
+        </li>
+        <li class="step">
+          <p class="step-no">Step 04</p>
+          <h3>학생취업처 제출</h3>
+          <p>활동보고서와 증빙서류 원본을 다음 달 5일까지 서면으로 제출합니다.</p>
+        </li>
+      </ol>
+      <p class="note">활동사진에는 실제 활동 내용과 참여자가 확인되어야 합니다. 서명은 참여 학생이 각자 직접 작성하며, 누락 없이 확인해 주세요.</p>
+    </div>
+  </section>
+
+  <section id="documents">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-en" aria-hidden="true">Documents</p>
+        <h2>어떤 서류가 필요한가요?</h2>
+        <p>지원금 사용 내역에 맞게 준비해 주세요</p>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr><th scope="col">활동 / 지출 구분</th><th scope="col">제출 서류</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>지원금 미사용</td><td>활동보고서</td></tr>
+            <tr><td>식비 · 다과비 사용</td><td>활동보고서 + 영수증 붙임철</td></tr>
+            <tr><td>재료 · 물품 구입</td><td>활동보고서 + 영수증 붙임철 + 검수조서</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="tbl-note">양식에 기재된 사업명·금액 등은 예시입니다. 실제 해당 사업 및 구매 내용에 맞게 수정하고, 해당 재원에 표시해 주세요.</p>
+    </div>
+  </section>
+
+  <section id="rules" class="rules">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-en" aria-hidden="true">Guidelines</p>
+        <h2>지원금 사용 전, 꼭 확인하세요</h2>
+        <p>상세 기준은 간담회 자료를 확인해 주세요</p>
+      </div>
+      <div class="limits">
+        <div class="limit">
+          <p class="limit-label">식비 · 1인 1일</p>
+          <p class="limit-value">12,000원 이내</p>
+          <p class="limit-desc">결제 시간 11:00–14:00 / 17:00–20:00</p>
+        </div>
+        <div class="limit">
+          <p class="limit-label">다과비 · 1인</p>
+          <p class="limit-value">5,000원 이내</p>
+          <p class="limit-desc">음료 수량은 참여 인원과 일치</p>
+        </div>
+        <div class="limit">
+          <p class="limit-label">식비 + 다과비 합계</p>
+          <p class="limit-value">지원금의 80% 이내</p>
+          <p class="limit-desc">동아리원 50% 이상 참석 시 사용 가능</p>
+        </div>
+      </div>
+
+      <h3 class="nogo-head">이런 건 사용할 수 없어요</h3>
+      <p class="nogo-sub">대표적인 금지 항목입니다. 결제 전에 꼭 확인해 주세요.</p>
+      <div class="ban" role="note"><p class="ban-label">사용 금지</p><p class="ban-text">뷔페, 유흥주점, 주점, 술집, 주류 구매 등 사용 금지</p></div>
+      <ul class="nogo">
+          <li class="nogo-item"><span class="nogo-icon" aria-hidden="true">×</span><div><p class="nogo-title">동아리와 관련 없는 물품</p><p class="nogo-note">구매 불가</p></div></li>
+          <li class="nogo-item"><span class="nogo-icon" aria-hidden="true">×</span><div><p class="nogo-title">물품 대량 구매</p><p class="nogo-note">불가</p></div></li>
+          <li class="nogo-item"><span class="nogo-icon" aria-hidden="true">×</span><div><p class="nogo-title">분산 주문 · 당일 여러 곳 결제</p><p class="nogo-note">금지</p></div></li>
+          <li class="nogo-item"><span class="nogo-icon" aria-hidden="true">×</span><div><p class="nogo-title">문구류</p><p class="nogo-note">연필 · 공책 · 볼펜 등 구매 금지</p></div></li>
+          <li class="nogo-item"><span class="nogo-icon" aria-hidden="true">×</span><div><p class="nogo-title">도서관 비치 도서 · 문제집</p><p class="nogo-note">구매 금지</p></div></li>
+          <li class="nogo-item"><span class="nogo-icon" aria-hidden="true">×</span><div><p class="nogo-title">교통비 · 학기 말 몰아서 구매</p><p class="nogo-note">금지</p></div></li>
+          <li class="nogo-item"><span class="nogo-icon" aria-hidden="true">×</span><div><p class="nogo-title">타 활동에 동아리 지원금 사용</p><p class="nogo-note">학과 특강 · 학과 비교과 금지</p></div></li>
+          <li class="nogo-item"><span class="nogo-icon" aria-hidden="true">×</span><div><p class="nogo-title">식대비 + 다과비</p><p class="nogo-note">당일 함께 사용 금지</p></div></li>
+          <li class="nogo-drink">
+            <div>
+              <span class="nogo-icon" aria-hidden="true">×</span>
+              <p class="nogo-title">음료 구매 기준</p>
+              <p class="nogo-rule"><b>음료 개수 = 활동 인원</b> (필수)<br>인당 <b>5,000원 초과 불가능</b></p>
+            </div>
+            <div class="ex" role="img" aria-label="예시: 동아리원 A가 4,000원 음료를 구매하는 것은 가능, 동아리원 B가 6,000원 음료를 구매하는 것은 불가능">
+              <p class="ex-cap">예시</p>
+              <div class="ex-row ex-ok"><span>동아리원 A · 4,000원</span><div class="ex-track"><div class="ex-fill"></div></div><span class="ex-res">가능</span></div>
+              <div class="ex-row ex-bad"><span>동아리원 B · 6,000원</span><div class="ex-track"><div class="ex-fill"></div></div><span class="ex-res">불가능</span></div>
+              <div class="ex-scale" aria-hidden="true"><span></span><span><i>5,000원</i></span><span></span></div>
+            </div>
+          </li>
+      </ul>
+
+      <div class="acc">
+        <details>
+          <summary>결제 전에 확인할 사항</summary>
+          <ul>
+            <li>지원금 배정액을 확인하고 사용 목적을 사전에 안내하여 승인받은 후 카드를 수령합니다.</li>
+            <li>오산·수원 이외 지역, 주말·공휴일 및 외부 활동은 사전 승인이 필요합니다.</li>
+            <li>사용 가능 여부가 모호한 물품은 결제 전에 담당자에게 문의해 주세요.</li>
+          </ul>
+        </details>
+        <details>
+          <summary>영수증 · 물품 사진 준비 방법</summary>
+          <ul>
+            <li>영수증은 상세내역·총액·사용일자·승인번호가 보이도록 원본을 부착합니다. 카드번호도 확인해 주세요.</li>
+            <li>영수증을 훼손하거나 겹쳐 붙이지 않습니다. 훼손된 경우 재발행이 필요합니다.</li>
+            <li>배달 주문은 카드 매출전표와 품목이 표시된 영수증을 모두 준비합니다.</li>
+            <li>물품 구입 시 검수조서를 작성하고, 구매한 물품의 전체 수량과 구성이 보이도록 사진을 촬영합니다.</li>
+          </ul>
+        </details>
+        <details>
+          <summary>기타 유의사항</summary>
+          <ul>
+            <li>포인트 적립·할인을 적용하지 않으며, 다른 프로그램 예산과 동일한 시간·장소에서 중복 집행하지 않습니다.</li>
+            <li>혁신사업·RISE 외 다른 사업의 카드를 사용하지 않습니다.</li>
+          </ul>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <div class="contact">
+    <div class="wrap contact-in">
+      <div>
+        <p class="sec-en" aria-hidden="true">Contact</p>
+        <h3>작성하다 궁금한 점이 있다면</h3>
+        <p>학생취업처 조교 주한진에게 문의해 주세요.</p>
+      </div>
+      <a class="tel" href="tel:0313702877">031-370-2877 <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <b>오산대학교 학생취업처</b>
+      <p>전공·취업동아리 자료실</p>
+    </div>
+    <p>2026-2학기 간담회 배포자료 기준 · 별도 변경 공지 시 해당 안내를 확인해 주세요.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var head = document.getElementById('head');
+  function onScroll() {
+    if (window.scrollY > 40) head.classList.add('solid');
+    else head.classList.remove('solid');
+  }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+  var btn = document.getElementById('menuBtn');
+  function setMenu(open) {
+    head.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+  }
+  btn.addEventListener('click', function () { setMenu(!head.classList.contains('open')); });
+  document.querySelectorAll('#gnb a').forEach(function (a) {
+    a.addEventListener('click', function () { setMenu(false); });
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
+})();
+</script>
+</body>
+</html>
