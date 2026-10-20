@@ -47,6 +47,9 @@ for link in links.links:
     assert raw.startswith(MAGIC), f"Not a traditional HWP binary: {filename}"
     assert hashlib.sha256(raw).hexdigest() == expected_digest, f"File changed: {filename}"
 assert set(EXPECTED) == seen
+assert not (ROOT / "files" / "영수증 붙임철&검수조서(전공).hwpx").exists(), "Outdated major HWPX must be removed"
+assert not (ROOT / "files" / "영수증 붙임철&검수조서(취업).hwpx").exists(), "Outdated employment HWPX must be removed"
+assert (ROOT / "files" / "2026학년도 2학기 간담회 자료.pptx").exists(), "Existing briefing PPTX must remain"
 assert "영수증 붙임철&amp;검수조서" not in page, "Outdated combined HWPX download still shown"
 assert "data-settlement-tab" in page and "data-settlement-panel" in page
 assert "formLink(clubType,spec[0])" in page
