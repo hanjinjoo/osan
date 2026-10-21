@@ -52,7 +52,7 @@ assert not (ROOT / "files" / "영수증 붙임철&검수조서(취업).hwpx").ex
 assert (ROOT / "files" / "2026학년도 2학기 간담회 자료.pptx").exists(), "Existing briefing PPTX must remain"
 assert "영수증 붙임철&amp;검수조서" not in page, "Outdated combined HWPX download still shown"
 assert "data-settlement-tab" in page and "data-settlement-panel" in page
-assert "formLink(clubType,spec[0])" in page
-assert "2026학년도 2학기 간담회 자료.pptx" in page
+assert "SETTLEMENT_FORMS" in (ROOT / "assets" / "js" / "advisor.js").read_text(encoding="utf-8")
+assert "2026학년도 2학기 간담회 자료.pptx" in (ROOT / "rules" / "index.html").read_text(encoding="utf-8")
 assert "https://hanjinjoo.github.io/osan-monitoring-2026/" in page
 print("PASS: all 6 original HWP files, hashes, one-to-one download links, and existing site links")

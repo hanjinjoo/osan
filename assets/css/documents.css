@@ -1,0 +1,36 @@
+/* ---------- Downloads ---------- */
+[hidden] { display: none !important; }
+.kakao-note { margin-bottom: 28px; padding: 18px 22px; background: var(--tint); border-left: 4px solid var(--navy); font-size: 15px; line-height: 1.7; }
+.kakao-note b { font-weight: 700; }
+.dl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.dl-card { display: flex; flex-direction: column; padding: 40px; border: 1px solid var(--line); background: var(--bg); transition: border-color .2s ease, background .2s ease; }
+.dl-card:hover { border-color: var(--navy); background: var(--tint); }
+.dl-type { font-family: var(--serif); font-size: 44px; font-weight: 500; line-height: 1; color: var(--accent); }
+.dl-kind { margin-top: 20px; font-size: 15px; color: var(--muted); font-weight: 500; }
+.dl-card h3 { margin-top: 6px; font-size: 26px; font-weight: 700; letter-spacing: -.02em; line-height: 1.35; }
+.dl-card p { margin-top: 14px; color: var(--muted); }
+.dl-meta { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
+.dl-btn { margin-top: 20px; display: flex; align-items: center; justify-content: space-between; padding: 18px 24px; background: var(--navy); color: #fff; font-weight: 500; transition: background .2s ease; }
+.dl-btn:hover { background: var(--navy-deep); }
+.dl-btn + .dl-btn { margin-top: 12px; }
+
+
+/* 2026-2 settlement forms: keep the existing document card design. */
+.settlement-tabs{display:grid;grid-template-columns:1fr 1fr;margin-top:24px;gap:8px}
+.settlement-tabs button{border:1px solid var(--line);background:var(--bg);color:var(--text);font:inherit;font-weight:700;cursor:pointer;min-height:50px;padding:10px 8px}
+.settlement-tabs button[aria-selected="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.settlement-tabs button:focus-visible{outline:3px solid #6fa8ee;outline-offset:2px}
+[data-settlement-panel][hidden]{display:none}
+.settlement-form{padding:20px 0;border-top:1px solid var(--line)}
+.settlement-form:first-child{border-top:0}
+.settlement-form-heading{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.settlement-form .form-number{border:1px solid var(--line);font-size:12px;font-weight:700;color:var(--muted);padding:3px 8px}
+.settlement-card .settlement-form h4{font-size:18px;line-height:1.45;font-weight:700}
+.settlement-card .settlement-form p{font-size:13.5px;line-height:1.65;margin-top:7px}
+.settlement-card .form-download{margin-top:12px;padding:13px 16px;min-height:48px;font-size:14px;gap:10px}
+.settlement-notice{background:var(--tint);border-left:3px solid var(--navy);padding:17px 18px;margin-top:12px}
+.settlement-notice strong{font-size:14px}
+.settlement-card .settlement-notice p{margin-top:8px;font-size:13.5px;line-height:1.75}
+.doc-result-downloads{display:flex;flex-wrap:wrap;gap:8px}
+
+.dl-grid{grid-template-columns:1fr;max-width:980px}.settlement-card{max-width:980px}.page-intro{padding:44px 0 0}.page-intro__inner{border-left:4px solid var(--navy);background:var(--tint);padding:24px 28px}.page-intro h2{font-size:23px}.page-intro p{color:var(--muted);margin-top:8px}.page-intro a{display:inline-block;margin-top:14px;color:var(--accent);font-weight:700;text-decoration:underline;text-underline-offset:4px}.other-services{margin-top:28px;display:flex;gap:18px;flex-wrap:wrap}.other-services a{border-bottom:1px solid var(--accent);color:var(--accent);padding-bottom:4px;font-weight:700}@media(max-width:720px){.page-intro{padding-top:24px}.page-intro__inner{padding:20px 18px}.dl-card{padding:24px 22px}.dl-type{font-size:36px}.dl-card h3{font-size:22px}.dl-btn{min-height:56px;padding:18px 20px}}
