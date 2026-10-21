@@ -1,29 +1,46 @@
-name: Verify official settlement forms
+name: Verify settlement forms and page separation
 on:
   push:
-    branches:
-      - feature/settlement-forms-six-hwp-20261020
+    branches: [main, feature/settlement-forms-six-hwp-20261020]
+    paths:
+      - index.html
+      - rules/**
+      - assets/**
+      - data/**
+      - files/**
+      - tests/**
+      - .github/workflows/verify-settlement-forms.yml
   pull_request:
     paths:
       - index.html
+      - rules/**
+      - assets/**
+      - data/**
       - files/**
-      - tests/check_settlement_forms.py
+      - tests/**
       - .github/workflows/verify-settlement-forms.yml
 jobs:
   verify:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Verify exact original HWP bytes and download links
+      - name: Verify exact official HWP bytes and links
         run: python tests/check_settlement_forms.py
-      - name: Check inline site JavaScript syntax
+      - name: Verify independent pages and data preservation
+        run: python tests/check_page_split.py
+      - name: Check inline legacy URL migration script
         run: |
           python - <<'PY'
           from pathlib import Path
           import re
           s=Path("index.html").read_text(encoding="utf-8")
-          scripts=re.findall(r'<script(?:\s[^>]*)?>([\s\S]*?)</script>', s)
-          assert len(scripts)==1
+          scripts=re.findall(r'<script>([\s\S]*?)</script>',s)
+          assert len(scripts)==1, "One inline migration script expected"
           Path("/tmp/osan-site-inline.js").write_text(scripts[0],encoding="utf-8")
           PY
           node --check /tmp/osan-site-inline.js
+      - name: Check modular JavaScript syntax
+        run: |
+          for file in assets/js/*.js data/*.js; do
+            node --check "$file"
+          done
